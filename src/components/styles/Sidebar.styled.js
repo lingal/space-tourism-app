@@ -13,11 +13,6 @@ export const StyledSidebar = styled.aside`
     top: 20%;
   }
 
-  /* @media screen and (max-width: 500px) {
-    nav{
-
-    }
-  } */
   ul {
     display: grid;
     gap: ${({ theme }) => theme.navbar.gap.mobile};

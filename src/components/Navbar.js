@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { links } from '../utils/constants';
 import { StyledNavbar } from './styles/Navbar.styled';
@@ -11,7 +11,10 @@ const Navbar = () => {
           const { id, title, url } = link;
           return (
             <li key={id}>
-              <NavLink to={url} className={isActive => isActive ? 'unselected' : 'unselected'}>
+              <NavLink
+                to={url}
+                className={({ isActive }) => (isActive ? 'selected' : '')}
+              >
                 <span>0{id - 1}</span>
                 {title}
               </NavLink>

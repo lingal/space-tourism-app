@@ -2,6 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 
+html {
+  font-size: 100%;
+  font-size-adjust: auto;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,18 +14,23 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
+  font-size: 0.9375rem;
+  color: #ffffff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.dark};
   background-image: url(${({ bg }) => bg});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #ffffff;
-  font-family: 'Barlow Condensed', sans-serif;
+  overflow-y: hidden;
 }
 
 h1,h2,h3,h4 {
-  font-family: 'Bellefair', serif;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
 }
 
 

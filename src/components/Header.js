@@ -3,7 +3,10 @@ import Logo from '../assets/shared/logo.svg';
 import BarsIcon from '../assets/shared/icon-hamburger.svg';
 import CloseIcon from '../assets/shared/icon-close.svg';
 import { Navbar } from '../components';
-import { StyledHeader } from './styles/Header.styled';
+import { StyledHeader } from './styles/';
+
+
+
 
 const Header = () => {
   return (
@@ -15,7 +18,6 @@ const Header = () => {
         <button>
           <img src={BarsIcon} alt="" />
         </button>
-        <div className="underline"></div>
         <Navbar />
       </StyledHeader>
     </>

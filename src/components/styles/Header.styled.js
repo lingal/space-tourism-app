@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  height: 5rem;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
 
-  /* .logo {
-    flex-grow: 2;
-  } */
+  .logo {
+    margin-left: clamp(1.5rem, 5vw, 2.5rem);
+  }
 
   button {
     background: transparent;
@@ -16,21 +17,7 @@ export const StyledHeader = styled.header`
     cursor: pointer;
     z-index: 1000;
     display: none;
-  }
-
-  .underline {
-    position: relative;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -250px;
-      height: 2px;
-      width: 400px;
-      background-color: red;
-      /* margin-left: 50px; */
-      z-index: 100000;
-    }
+    margin-right: clamp(1.5rem, 5vw, 2rem);
   }
 
   nav {
@@ -44,15 +31,17 @@ export const StyledHeader = styled.header`
       display: flex;
       gap: 50px;
       li {
-        height: 100%;
-        display: grid;
-        align-items: center;
+        a {
+          height: 100%;
+          display: inline-flex;
+          align-items: center;
+
+          &:hover {
+            border-bottom: 2px solid ${({ theme }) => theme.colors.white};
+          }
+        }
         span {
           margin-right: 0.5rem;
-        }
-
-        &:hover {
-          border-bottom: 2px solid ${({ theme }) => theme.colors.white};
         }
       }
     }
@@ -68,6 +57,7 @@ export const StyledHeader = styled.header`
   }
 
   @media screen and (max-width: 1024px) {
+    margin-top: 0;
     nav {
       padding-inline: 3rem;
       ul li span {

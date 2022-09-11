@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import { StyledSidebar } from './styles/Sidebar.styled';
+import { StyledSidebar } from './styles/';
 
 const Sidebar = () => {
   const isOpen = false;

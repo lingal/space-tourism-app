@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
+import { StyledSectionTitle } from '../components/styles';
 const CrewPage = () => {
   return (
-    <div>CrewPage</div>
-  )
-}
+    <div>
+      <StyledSectionTitle>
+        <span>02</span> meet your crew
+      </StyledSectionTitle>
+    </div>
+  );
+};
 
-export default CrewPage
+export default CrewPage;

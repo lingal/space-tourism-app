@@ -10,11 +10,9 @@ export const StyledNavbar = styled.nav`
         font-weight: bold;
       }
     }
-  }
-  .selected {
-    color: red;
-  }
-  .unselected {
-    color: yellow;
+
+    .selected {
+      border-bottom: 2px solid ${({ theme }) => theme.colors.white};
+    }
   }
 `;

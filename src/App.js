@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage, CrewPage, DestinationPage, TechnologyPage } from './pages';
 import { ThemeProvider } from 'styled-components';
 import { Header, Sidebar } from './components';
-import {theme} from './components/styles/theme';
+import { theme } from './components/styles/theme';
 import GlobalStyles from './components/styles/Global';
 import homeDesktop from './assets/home/background-home-desktop.jpg';
 import homeTablet from './assets/home/background-home-tablet.jpg';
@@ -77,6 +77,7 @@ function App() {
         />
         <Header />
         <Sidebar />
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/destination" element={<DestinationPage />} />
