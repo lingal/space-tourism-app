@@ -10,6 +10,7 @@ export const HomeContainer = styled.section`
     text-align: center;
     padding-inline: 1rem;
     h1 {
+      font-family: 'Barlow Condensed', sans-serif;
       text-transform: uppercase;
       font-size: ${({ theme }) => theme.colors.lighter};
       letter-spacing: ${({ theme }) => theme.heading5.spacing};

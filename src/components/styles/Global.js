@@ -25,11 +25,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-y: hidden;
 }
 
 h1,h2,h3,h4 {
-  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
 }
 

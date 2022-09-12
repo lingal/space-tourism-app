@@ -42,6 +42,7 @@ const DestinationPage = () => {
           <h2>{name}</h2>
           <p>{description}</p>
 
+          <div className="underline"></div>
           <div>
             <div>
               <h3>avg. distance</h3>
