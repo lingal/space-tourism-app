@@ -5,6 +5,8 @@ import { HomeContainer } from './Home.styled';
 import { StyledNavbar } from './Navbar.styled';
 import { StyledSidebar } from './Sidebar.styled';
 import { StyledSectionTitle } from './SectionTitle.styled';
+import { CrewContainer } from './Crew.styled';
+import { StyledUnderline } from './Underline.styled';
 export {
   DestinationContainer,
   StyledMain,
@@ -12,5 +14,7 @@ export {
   HomeContainer,
   StyledNavbar,
   StyledSidebar,
-  StyledSectionTitle
+  StyledSectionTitle,
+  CrewContainer,
+  StyledUnderline
 };

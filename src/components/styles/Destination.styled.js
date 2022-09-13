@@ -42,6 +42,7 @@ export const DestinationContainer = styled.section`
   }
   article {
     grid-area: desc;
+    margin-bottom: 3rem;
     h2 {
       font-family: 'Bellefair', serif;
       font-size: 4rem;
@@ -50,14 +51,32 @@ export const DestinationContainer = styled.section`
       color: ${({ theme }) => theme.colors.neutral};
       text-transform: none;
       width: 38ch;
+      height: 7rem;
       margin-inline: auto;
+      margin-bottom: 1.5rem;
     }
-    .underline {
-      height: 1px;
-      opacity: 0.25;
-      width: 90%;
-      background-color: #fff;
-      margin-inline: auto;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      h3 {
+        color: ${({ theme }) => theme.colors.neutral};
+      }
+      p {
+        font-family: 'Bellefair', serif;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @media screen and (min-width: 700px) {
+    h1 {
+     text-align: left;
+    }
+    article > div {
+      flex-direction: row;
+      justify-content: center;
     }
   }
 

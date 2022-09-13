@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import {
   DestinationContainer,
   StyledMain,
-  StyledSectionTitle
+  StyledSectionTitle,
+  StyledUnderline
 } from '../components/styles/';
 import { sections } from '../utils/constants';
 
@@ -42,7 +43,8 @@ const DestinationPage = () => {
           <h2>{name}</h2>
           <p>{description}</p>
 
-          <div className="underline"></div>
+          <StyledUnderline></StyledUnderline>
+
           <div>
             <div>
               <h3>avg. distance</h3>

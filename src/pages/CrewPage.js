@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { sections } from '../utils/constants';
-import { StyledSectionTitle } from '../components/styles';
+import {
+  StyledMain,
+  CrewContainer,
+  StyledSectionTitle,
+  StyledUnderline
+} from '../components/styles';
 
 const CrewPage = () => {
   const [{ crew }] = sections;
@@ -11,16 +16,36 @@ const CrewPage = () => {
   const [firstName, lastName] = name.split(' ');
 
   return (
-    <section>
-      <StyledSectionTitle>
-        <span>02</span> meet your crew
-      </StyledSectionTitle>
-      <img
-        src={require(`../assets/crew/image-${firstName.toLocaleLowerCase()}-${lastName.toLocaleLowerCase()}.png`)}
-        alt=""
-      />
-      <div className="dot-indicators"></div>
-    </section>
+    <StyledMain>
+      <CrewContainer>
+        <StyledSectionTitle>
+          <span>02</span> meet your crew
+        </StyledSectionTitle>
+        <img
+          src={require(`../assets/crew/image-${firstName.toLocaleLowerCase()}-${lastName.toLocaleLowerCase()}.png`)}
+          alt=""
+        />
+        <StyledUnderline className='underline' />
+        <div className="dot-indicators">
+          {crew.map((_, idx) => {
+            return (
+              <button
+                key={idx}
+                onClick={() => setIndex(idx)}
+                className={index === idx ? 'selected' : ''}
+              ></button>
+            );
+          })}
+        </div>
+
+        <article>
+          <h2>{role}</h2>
+          <p>{name}</p>
+
+          <p>{bio}</p>
+        </article>
+      </CrewContainer>
+    </StyledMain>
   );
 };
 
