@@ -26,19 +26,22 @@ export const HomeContainer = styled.section`
       margin-inline: auto;
     }
   }
-  button {
-    font-size: 1.5rem;
+  a {
+    align-self: flex-end;
+    background: #fff;
+    color: red;
     font-size: clamp(1.5rem, 4vw, 2rem);
     text-transform: uppercase;
     font-family: 'Bellefair', serif;
-    height: 10rem;
-    width: 10rem;
     height: clamp(11rem, 32vw + 1rem, 15rem);
     width: clamp(11rem, 32vw + 1rem, 15rem);
     border-radius: 50%;
     border: none;
+    display: grid;
+    place-content: center;
     position: relative;
     cursor: pointer;
+
     &::before {
       content: '';
       position: absolute;

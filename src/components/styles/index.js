@@ -7,6 +7,7 @@ import { StyledSidebar } from './Sidebar.styled';
 import { StyledSectionTitle } from './SectionTitle.styled';
 import { CrewContainer } from './Crew.styled';
 import { StyledUnderline } from './Underline.styled';
+import { TechnologyContainer } from './Technology.styled';
 export {
   DestinationContainer,
   StyledMain,
@@ -16,5 +17,6 @@ export {
   StyledSidebar,
   StyledSectionTitle,
   CrewContainer,
-  StyledUnderline
+  StyledUnderline,
+  TechnologyContainer
 };

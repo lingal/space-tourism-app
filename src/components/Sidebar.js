@@ -2,11 +2,9 @@ import React from 'react';
 import Navbar from './Navbar';
 import { StyledSidebar } from './styles/';
 
-const Sidebar = () => {
-  const isOpen = false;
-
+const Sidebar = ({ isSidebarOpen }) => {
   return (
-    <StyledSidebar>
+    <StyledSidebar className={isSidebarOpen ? 'show' : ''}>
       <Navbar />
     </StyledSidebar>
   );

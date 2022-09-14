@@ -5,18 +5,16 @@ import CloseIcon from '../assets/shared/icon-close.svg';
 import { Navbar } from '../components';
 import { StyledHeader } from './styles/';
 
-
-
-
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <StyledHeader>
         <div className="logo">
           <img src={Logo} alt="space logo" />
         </div>
-        <button>
-          <img src={BarsIcon} alt="" />
+        <button onClick={() => setIsOpen((prevState) => !prevState)}>
+          <img src={isOpen ? CloseIcon : BarsIcon} alt="" />
         </button>
         <Navbar />
       </StyledHeader>

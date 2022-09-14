@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage, CrewPage, DestinationPage, TechnologyPage } from './pages';
 import { ThemeProvider } from 'styled-components';
@@ -38,7 +38,16 @@ const backgroundImages = {
   }
 };
 
+const reducer = (state, action) => { };
+const defaultState = {
+  isSidebarOpen: false,
+}
+
+
 function App() {
+  const [state, dispatch] = useReducer(reducer, defaultState);
+
+
   const [size, setSize] = useState(window.innerWidth);
   const [screen, setScreen] = useState('mobile');
 
@@ -76,13 +85,17 @@ function App() {
           bg={backgroundImages[screen][location ? location : 'home']}
         />
         <Header />
-        <Sidebar />
-
+        <Sidebar isSidebarOpen={state.isSidebarOpen} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/destination" element={<DestinationPage />} />
           <Route path="/crew" element={<CrewPage />} />
-          <Route path="/technology" element={<TechnologyPage />} />
+          <Route
+            path="/technology"
+            element={
+              <TechnologyPage data={screen !== 'desktop' ? true : false} />
+            }
+          />
         </Routes>
       </ThemeProvider>
     </>
