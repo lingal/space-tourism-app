@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { links } from '../utils/constants';
 import { StyledNavbar } from './styles/Navbar.styled';
@@ -12,6 +12,7 @@ const Navbar = () => {
           return (
             <li key={id}>
               <NavLink
+                state={{ isSidebarOpen: true }}
                 to={url}
                 className={({ isActive }) => (isActive ? 'selected' : '')}
               >

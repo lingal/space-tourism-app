@@ -6,6 +6,9 @@ export const StyledNavbar = styled.nav`
 
     li {
       letter-spacing: 2.7px;
+      a {
+        color: ${({ theme }) => theme.colors.white};
+      }
       span {
         font-weight: bold;
       }

@@ -22,9 +22,12 @@ body {
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.dark};
   background-image: url(${({ bg }) => bg});
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (min-width: 1024px) {
+    overflow-y: hidden;
+  }
 }
 
 h1,h2,h3,h4 {

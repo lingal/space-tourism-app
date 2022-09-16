@@ -38,20 +38,26 @@ const backgroundImages = {
   }
 };
 
-const reducer = (state, action) => { };
+const reducer = (state, action) => {};
 const defaultState = {
-  isSidebarOpen: false,
-}
-
+  isSidebarOpen: false
+};
 
 function App() {
   const [state, dispatch] = useReducer(reducer, defaultState);
-
 
   const [size, setSize] = useState(window.innerWidth);
   const [screen, setScreen] = useState('mobile');
 
   const location = useLocation().pathname.slice(1);
+
+  const [test, setTest] = useState(false);
+
+  const getValue = () => {
+    setTest((e) => !e);
+  };
+
+  console.log(test);
 
   const getWindowSize = () => {
     setSize(window.innerWidth);
@@ -84,8 +90,8 @@ function App() {
         <GlobalStyles
           bg={backgroundImages[screen][location ? location : 'home']}
         />
-        <Header />
-        <Sidebar isSidebarOpen={state.isSidebarOpen} />
+        <Header isNavOpen={getValue} isOpen={test} />
+        <Sidebar isSidebarOpen={test} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/destination" element={<DestinationPage />} />

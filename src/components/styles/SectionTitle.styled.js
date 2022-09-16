@@ -6,7 +6,7 @@ export const StyledSectionTitle = styled.h1`
   text-transform: uppercase;
   span {
     font-weight: bold;
-    color: ${({ theme }) => theme.colors.lighter};
+    color: ${({ theme }) => theme.colors.faded50};
     margin-right: 0.5rem;
   }
 

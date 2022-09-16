@@ -3,8 +3,7 @@ import { sections } from '../utils/constants';
 import {
   StyledMain,
   CrewContainer,
-  StyledSectionTitle,
-  StyledUnderline
+  StyledSectionTitle
 } from '../components/styles';
 
 const CrewPage = () => {
@@ -25,7 +24,6 @@ const CrewPage = () => {
           src={require(`../assets/crew/image-${firstName.toLocaleLowerCase()}-${lastName.toLocaleLowerCase()}.png`)}
           alt=""
         />
-        <StyledUnderline className='underline' />
         <div className="dot-indicators">
           {crew.map((_, idx) => {
             return (

@@ -8,15 +8,16 @@ export const HomeContainer = styled.section`
 
   div {
     text-align: center;
-    padding-inline: 1rem;
+    padding-inline: 2rem;
+
     h1 {
       font-family: 'Barlow Condensed', sans-serif;
       text-transform: uppercase;
-      font-size: ${({ theme }) => theme.colors.lighter};
+      font-size: clamp(0.75rem, 3vw, 1.25rem);
       letter-spacing: ${({ theme }) => theme.heading5.spacing};
       span {
         letter-spacing: normal;
-        font-size: clamp(6rem, 13vw + 1rem, 8rem);
+        font-size: clamp(5rem, 16vw + 1rem, 8rem);
         font-family: 'Bellefair', serif;
         color: ${({ theme }) => theme.colors.white};
       }
@@ -24,17 +25,18 @@ export const HomeContainer = styled.section`
     p {
       max-width: 22rem;
       margin-inline: auto;
+      letter-spacing: 0.5px;
     }
   }
   a {
     align-self: flex-end;
-    background: #fff;
-    color: red;
+    background: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.dark};
     font-size: clamp(1.5rem, 4vw, 2rem);
     text-transform: uppercase;
     font-family: 'Bellefair', serif;
-    height: clamp(11rem, 32vw + 1rem, 15rem);
-    width: clamp(11rem, 32vw + 1rem, 15rem);
+    height: clamp(10rem, 32vw + 1rem, 15rem);
+    width: clamp(10rem, 32vw + 1rem, 15rem);
     border-radius: 50%;
     border: none;
     display: grid;
@@ -50,11 +52,11 @@ export const HomeContainer = styled.section`
       inset: 0 0 0 0;
       height: 100%;
       width: 100%;
-      background-color: red;
+      background-color: ${({ theme }) => theme.colors.faded25};
       border-radius: 50%;
       z-index: -1;
       transform: scale(0);
-      transition: 0.75s linear;
+      transition: 0.5s ease-in-out;
     }
     &:hover::before {
       transform: scale(1.5);
@@ -70,7 +72,6 @@ export const HomeContainer = styled.section`
     grid-template-columns: 1fr 1fr;
     align-content: end;
     div {
-      /* padding: 0; */
       text-align: left;
       p {
         margin: 0;

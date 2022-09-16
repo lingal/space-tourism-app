@@ -6,7 +6,6 @@ const HomePage = () => {
   return (
     <StyledMain>
       <HomeContainer>
-        
         <div>
           <h1>
             So, you want to travel to <br />
@@ -19,9 +18,11 @@ const HomePage = () => {
             world experience!
           </p>
         </div>
-        {/* <button> */}
-          <Link to="/destination"><span>Explore</span></Link>
-        {/* </button> */}
+       
+        <Link to="/destination">
+          <span>Explore</span>
+        </Link>
+        
       </HomeContainer>
     </StyledMain>
   );

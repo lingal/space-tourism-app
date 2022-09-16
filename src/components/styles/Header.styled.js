@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  height: 4rem;
+width: 100%;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
 
   .logo {
     margin-left: clamp(1.5rem, 5vw, 2.5rem);
@@ -16,16 +16,15 @@ export const StyledHeader = styled.header`
     border: none;
     cursor: pointer;
     z-index: 1000;
-    display: none;
+    display: block;
     margin-right: clamp(1.5rem, 5vw, 2rem);
   }
 
   nav {
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.light};
+    background-color: ${({ theme }) => theme.colors.faded10};
     backdrop-filter: blur(30px);
-    padding-left: clamp(2rem, 10vw, 10rem);
-    padding-right: 15vw;
+    display: none;
     ul {
       height: 100%;
       display: flex;
@@ -35,9 +34,8 @@ export const StyledHeader = styled.header`
           height: 100%;
           display: inline-flex;
           align-items: center;
-
           &:hover {
-            border-bottom: 2px solid ${({ theme }) => theme.colors.white};
+            border-bottom: 2px solid ${({ theme }) => theme.colors.faded50};
           }
         }
         span {
@@ -47,21 +45,26 @@ export const StyledHeader = styled.header`
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (min-width: 768px) {
     button {
-      display: block;
-    }
-    nav {
       display: none;
     }
-  }
-
-  @media screen and (max-width: 1024px) {
-    margin-top: 0;
     nav {
+      display: block;
       padding-inline: 3rem;
       ul li span {
         display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 2rem;
+    nav {
+      padding-left: clamp(2rem, 10vw, 10rem);
+      padding-right: 15vw;
+      ul li span {
+        display: inline;
       }
     }
   }

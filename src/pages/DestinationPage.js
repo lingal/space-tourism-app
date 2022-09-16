@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import {
   DestinationContainer,
   StyledMain,
-  StyledSectionTitle,
-  StyledUnderline
+  StyledSectionTitle
 } from '../components/styles/';
 import { sections } from '../utils/constants';
 
@@ -29,7 +28,7 @@ const DestinationPage = () => {
         <div className="tabs-container">
           {destinations.map((tab, idx) => {
             return (
-              <button
+              <button key={idx}
                 onClick={() => setIndex(idx)}
                 className={index === idx ? 'selected' : ''}
               >
@@ -42,8 +41,6 @@ const DestinationPage = () => {
         <article>
           <h2>{name}</h2>
           <p>{description}</p>
-
-          <StyledUnderline></StyledUnderline>
 
           <div>
             <div>
