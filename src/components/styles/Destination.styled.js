@@ -20,11 +20,10 @@ export const DestinationContainer = styled.section`
   img {
     grid-area: image;
     max-width: 16rem;
-    margin-inline: auto;
   }
   .tabs-container {
     grid-area: tabs;
-    display: flex;
+    display: inline-flex;
     gap: clamp(1rem, 1vw + 1rem, 2rem);
     button {
       background: transparent;
@@ -91,18 +90,24 @@ export const DestinationContainer = styled.section`
 
   @media screen and (min-width: 1024px) {
     text-align: left;
-    /* justify-items: left; */
+    align-items: center;
     grid-template-areas:
       'title title'
       'image tabs'
       'image desc';
 
-      grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
     img {
       max-width: 70%;
     }
 
+    .tabs-container {
+      width: 80%;
+    }
+
     article {
+      width: 80%;
       & > p {
         max-width: 21rem;
       }

@@ -11,7 +11,7 @@ export const StyledMain = styled.main`
   }
 
   @media screen and (min-width: 1024px) {
-    padding-top: 0;
+    padding-top: 0rem;
     height: calc(100vh - 5rem - 2rem);
     align-content: center;
     grid-template-columns: 80%;

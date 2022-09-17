@@ -20,10 +20,13 @@ const CrewPage = () => {
         <StyledSectionTitle>
           <span>02</span> meet your crew
         </StyledSectionTitle>
-        <img
-          src={require(`../assets/crew/image-${firstName.toLocaleLowerCase()}-${lastName.toLocaleLowerCase()}.png`)}
-          alt=""
-        />
+        <div>
+          <img
+            src={require(`../assets/crew/image-${firstName.toLocaleLowerCase()}-${lastName.toLocaleLowerCase()}.png`)}
+            alt=""
+          />
+        </div>
+
         <div className="dot-indicators">
           {crew.map((_, idx) => {
             return (
