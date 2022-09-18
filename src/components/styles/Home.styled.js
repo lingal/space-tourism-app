@@ -13,17 +13,17 @@ export const HomeContainer = styled.section`
     h1 {
       font-family: 'Barlow Condensed', sans-serif;
       text-transform: uppercase;
-      font-size: clamp(0.75rem, 3vw, 1.25rem);
-      letter-spacing: ${({ theme }) => theme.heading5.spacing};
+      font-size: ${({ theme }) => theme.fontSizes.heading5};
+      letter-spacing: ${({ theme }) => theme.letterSpacing.medium};
       span {
         letter-spacing: normal;
-        font-size: clamp(5rem, 16vw + 1rem, 8rem);
+        font-size: ${({ theme }) => theme.fontSizes.heading1};
         font-family: 'Bellefair', serif;
         color: ${({ theme }) => theme.colors.white};
       }
     }
     p {
-      max-width: 22rem;
+      max-width: 54ch;
       margin-inline: auto;
       letter-spacing: 0.5px;
     }
@@ -63,12 +63,12 @@ export const HomeContainer = styled.section`
     }
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     p {
       font-size: 1rem;
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-columns: 1fr 1fr;
     align-content: end;
     div {

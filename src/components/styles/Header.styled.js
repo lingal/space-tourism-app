@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-width: 100%;
+  width: 100%;
   height: 5rem;
   display: flex;
   justify-content: space-between;
@@ -31,6 +31,7 @@ width: 100%;
       gap: 50px;
       li {
         a {
+          font-size: ${({ theme }) => theme.fontSizes.nav.min};
           height: 100%;
           display: inline-flex;
           align-items: center;
@@ -45,7 +46,7 @@ width: 100%;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     button {
       display: none;
     }
@@ -58,11 +59,16 @@ width: 100%;
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     margin-top: 2rem;
     nav {
       padding-left: clamp(2rem, 10vw, 10rem);
       padding-right: 15vw;
+
+      ul li a {
+        font-size: ${({ theme }) => theme.fontSizes.nav.max};
+        letter-spacing: ${({ theme }) => theme.letterSpacing.medium};
+      }
       ul li span {
         display: inline;
       }

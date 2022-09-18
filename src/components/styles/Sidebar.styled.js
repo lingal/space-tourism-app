@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSidebar = styled.aside`
-  background: ${({ theme }) => theme.colors.light};
+  background: ${({ theme }) => theme.colors.faded10};
   backdrop-filter: blur(30px);
   position: fixed;
   inset: 0 0 0 30%;
@@ -21,7 +21,7 @@ export const StyledSidebar = styled.aside`
 
   ul {
     display: grid;
-    gap: ${({ theme }) => theme.navbar.gap.mobile};
+    gap: ${({ theme }) => theme.space.gap.mobile};
 
     li > * span {
       margin-right: 0.5rem;

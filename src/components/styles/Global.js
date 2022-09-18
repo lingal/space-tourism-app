@@ -25,8 +25,12 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  @media screen and (min-width: 1024px) {
-    overflow-y: hidden;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    font-size: 1rem;
+  }
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
+     font-size: 1.125rem;
   }
 }
 

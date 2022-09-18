@@ -5,7 +5,7 @@ export const StyledNavbar = styled.nav`
     text-transform: uppercase;
 
     li {
-      letter-spacing: 2.7px;
+      letter-spacing: ${({ theme }) => theme.letterSpacing.small};
       a {
         color: ${({ theme }) => theme.colors.white};
       }

@@ -57,7 +57,6 @@ function App() {
     setTest((e) => !e);
   };
 
-  console.log(test);
 
   const getWindowSize = () => {
     setSize(window.innerWidth);

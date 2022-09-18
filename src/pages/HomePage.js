@@ -18,11 +18,10 @@ const HomePage = () => {
             world experience!
           </p>
         </div>
-       
+
         <Link to="/destination">
           <span>Explore</span>
         </Link>
-        
       </HomeContainer>
     </StyledMain>
   );

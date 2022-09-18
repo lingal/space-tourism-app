@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const CrewContainer = styled.section`
-  height: 100%;
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
@@ -11,7 +10,7 @@ export const CrewContainer = styled.section`
     'indicators'
     'desc';
 
-  row-gap: 2rem;
+  gap: 1.75rem;
   h1 {
     grid-area: title;
   }
@@ -56,7 +55,7 @@ export const CrewContainer = styled.section`
 
     h2 {
       color: ${({ theme }) => theme.colors.faded50};
-      font-size: 1.15rem;
+      font-size: 1rem;
     }
 
     & > p:first-of-type {
@@ -70,7 +69,7 @@ export const CrewContainer = styled.section`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     grid-template-areas:
       'title'
       'desc'
@@ -85,8 +84,6 @@ export const CrewContainer = styled.section`
     & > div:first-of-type {
       border: none;
       img {
-        /* width: 70%; */
-        /* height: 30rem; */
         height: 100%;
       }
     }
@@ -106,22 +103,25 @@ export const CrewContainer = styled.section`
       }
     }
   }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-areas:
       'title image'
       'desc image'
       'indicators image';
 
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-
     & > div:first-of-type {
       height: 100%;
       border: none;
-      align-content: flex-end;
+      position: relative;
 
       img {
-        /* height: 100%; */
-        width: 100%;
+        height: 32rem;
+        position: absolute;
+        bottom: -20%;
+        left: 0;
+        transform: translate(20%, 9%);
       }
     }
 

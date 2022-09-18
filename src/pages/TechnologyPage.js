@@ -10,7 +10,7 @@ const TechnologyPage = ({ data }) => {
   const [{ technology }] = sections;
   const [index, setIndex] = useState(0);
 
-  const { name, description} = technology[index];
+  const { name, description } = technology[index];
 
   const [word1, word2] = name.split(' ');
 
@@ -20,6 +20,7 @@ const TechnologyPage = ({ data }) => {
         <StyledSectionTitle>
           <span>03</span> space launch 101
         </StyledSectionTitle>
+
         <img
           src={require(`../assets/technology/image-${
             word2
@@ -28,6 +29,7 @@ const TechnologyPage = ({ data }) => {
           }-${data ? 'landscape' : 'portrait'}.jpg`)}
           alt={name}
         />
+
         <div className="numbered-indicators">
           {technology.map((_, idx) => {
             return (

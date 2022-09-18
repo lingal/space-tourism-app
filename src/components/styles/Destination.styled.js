@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const DestinationContainer = styled.section`
-  height: 100%;
   text-transform: uppercase;
   text-align: center;
   display: grid;
@@ -12,7 +11,6 @@ export const DestinationContainer = styled.section`
     'image'
     'tabs'
     'desc';
-  grid-template-columns: 1fr;
 
   h1 {
     grid-area: title;
@@ -29,7 +27,7 @@ export const DestinationContainer = styled.section`
       background: transparent;
       border: none;
       text-transform: uppercase;
-      letter-spacing: ${({ theme }) => theme.navbar.spacing};
+      letter-spacing: ${({ theme }) => theme.letterSpacing.small};
       color: ${({ theme }) => theme.colors.neutral};
       padding-bottom: 0.5rem;
       cursor: pointer;
@@ -72,7 +70,7 @@ export const DestinationContainer = styled.section`
       }
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     h1 {
       justify-self: left;
     }
@@ -88,7 +86,7 @@ export const DestinationContainer = styled.section`
     }
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     text-align: left;
     align-items: center;
     grid-template-areas:
