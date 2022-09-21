@@ -2,20 +2,23 @@ import { useEffect, useState, useReducer } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage, CrewPage, DestinationPage, TechnologyPage } from './pages';
 import { ThemeProvider } from 'styled-components';
-import { Header, Sidebar } from './components';
+import { SharedLayout } from './pages/';
+import { Sidebar } from './components';
 import { theme } from './components/styles/theme';
 import GlobalStyles from './components/styles/Global';
-import homeDesktop from './assets/home/background-home-desktop.jpg';
-import homeTablet from './assets/home/background-home-tablet.jpg';
-import homeMobile from './assets/home/background-home-mobile.jpg';
-import crewDesktop from './assets/crew/background-crew-desktop.jpg';
-import crewTablet from './assets/crew/background-crew-tablet.jpg';
-import crewMobile from './assets/crew/background-crew-mobile.jpg';
-import destinationDesktop from './assets/destination/background-destination-desktop.jpg';
-import destinationTablet from './assets/destination/background-destination-tablet.jpg';
-import destinationmobile from './assets/destination/background-destination-mobile.jpg';
-import technologyBg from './assets/technology/background-technology-desktop.jpg';
-import './App.css';
+
+import {
+  homeDesktop,
+  homeTablet,
+  homeMobile,
+  crewDesktop,
+  crewTablet,
+  crewMobile,
+  destinationDesktop,
+  destinationTablet,
+  destinationmobile,
+  technologyBg
+} from './assets';
 
 const backgroundImages = {
   desktop: {
@@ -57,7 +60,6 @@ function App() {
     setTest((e) => !e);
   };
 
-
   const getWindowSize = () => {
     setSize(window.innerWidth);
   };
@@ -89,18 +91,20 @@ function App() {
         <GlobalStyles
           bg={backgroundImages[screen][location ? location : 'home']}
         />
-        <Header isNavOpen={getValue} isOpen={test} />
+        {/* <Header isNavOpen={getValue} isOpen={test} /> */}
         <Sidebar isSidebarOpen={test} />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/destination" element={<DestinationPage />} />
-          <Route path="/crew" element={<CrewPage />} />
-          <Route
-            path="/technology"
-            element={
-              <TechnologyPage data={screen !== 'desktop' ? true : false} />
-            }
-          />
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/destination" element={<DestinationPage />} />
+            <Route path="/crew" element={<CrewPage />} />
+            <Route
+              path="/technology"
+              element={
+                <TechnologyPage data={screen !== 'desktop' ? true : false} />
+              }
+            />
+          </Route>
         </Routes>
       </ThemeProvider>
     </>

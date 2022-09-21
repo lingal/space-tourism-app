@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from './breakpoints';
 
 export const TechnologyContainer = styled.section`
   display: grid;
@@ -61,11 +62,13 @@ export const TechnologyContainer = styled.section`
 
     & > p:first-of-type {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      ${breakpoints('font-size', 'rem', [{ 768: 2.5 }, { 1024: 3.5 }])};
       font-family: 'Bellefair', serif;
+      margin-bottom: 1rem;
     }
     & > p:last-of-type {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      ${breakpoints('font-size', 'rem', [{ 1024: 1.125 }])};
       color: ${({ theme }) => theme.colors.neutral};
       max-width: 48ch;
       margin-inline: auto;
@@ -79,16 +82,24 @@ export const TechnologyContainer = styled.section`
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-areas:
-      'title title title'
-      'indicators desc image';
-    grid-template-columns: 1fr 1fr 1fr;
+      '. title title .'
+      '. indicators desc image';
+
+    grid-template-columns: minmax(1rem, 1fr) min-content minmax(0, 30rem) 30rem;
 
     img {
-      height: 25rem;
+
+      width: 70%;
+      justify-self: flex-end;
+
     }
 
     .numbered-indicators {
       flex-direction: column;
+    }
+    article {
+      align-self: center;
+      text-align: left;
     }
   }
 `;

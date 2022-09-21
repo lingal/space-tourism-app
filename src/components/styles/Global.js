@@ -1,9 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
+import { breakpoints } from './breakpoints';
 
 const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 100%;
+
   font-size-adjust: auto;
 }
 
@@ -25,12 +27,14 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+${breakpoints('overflow-Y', '', [{ 1024: 'hidden' }])};
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+  /* @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     font-size: 1rem;
-  }
+  } */
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-     font-size: 1.125rem;
+     /* font-size: 1.125rem; */
+     /* overflow-Y: hidden; */
   }
 }
 

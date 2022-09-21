@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from './breakpoints';
 
 export const HomeContainer = styled.section`
   display: grid;
@@ -13,11 +14,12 @@ export const HomeContainer = styled.section`
     h1 {
       font-family: 'Barlow Condensed', sans-serif;
       text-transform: uppercase;
-      font-size: ${({ theme }) => theme.fontSizes.heading5};
+      font-size: 1rem;
+      ${breakpoints('font-size', 'rem', [{ 768: 1.25 }, { 1024: 1.75 }])};
       letter-spacing: ${({ theme }) => theme.letterSpacing.medium};
       span {
         letter-spacing: normal;
-        font-size: ${({ theme }) => theme.fontSizes.heading1};
+        font-size: clamp(5rem, 12vw + 2rem, 9.375rem);
         font-family: 'Bellefair', serif;
         color: ${({ theme }) => theme.colors.white};
       }
@@ -26,13 +28,16 @@ export const HomeContainer = styled.section`
       max-width: 54ch;
       margin-inline: auto;
       letter-spacing: 0.5px;
+      ${breakpoints('font-size', 'rem', [{ 768: 1 }])};
     }
   }
   a {
     align-self: flex-end;
     background: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.dark};
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: 1.25rem;
+    ${breakpoints('font-size', 'rem', [{ 768: 2 }])};
+    letter-spacing: 1.25px;
     text-transform: uppercase;
     font-family: 'Bellefair', serif;
     height: clamp(10rem, 32vw + 1rem, 15rem);
@@ -64,13 +69,14 @@ export const HomeContainer = styled.section`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    p {
-      font-size: 1rem;
+    padding-top: 3.5rem;
+    gap: 8rem;
+    a {
+      letter-spacing: 2px;
     }
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-columns: 1fr 1fr;
-    align-content: end;
     div {
       text-align: left;
       p {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakpoints } from './breakpoints';
 
 export const StyledHeader = styled.header`
   width: 100%;
@@ -31,7 +32,9 @@ export const StyledHeader = styled.header`
       gap: 50px;
       li {
         a {
-          font-size: ${({ theme }) => theme.fontSizes.nav.min};
+          font-size: 0.875rem;
+          ${breakpoints('font-size', 'rem', [{ 1024: 1 }])};
+          ${breakpoints('letter-spacing', 'px', [{ 1024: 2.7 }])};
           height: 100%;
           display: inline-flex;
           align-items: center;
@@ -60,15 +63,11 @@ export const StyledHeader = styled.header`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     nav {
       padding-left: clamp(2rem, 10vw, 10rem);
       padding-right: 15vw;
 
-      ul li a {
-        font-size: ${({ theme }) => theme.fontSizes.nav.max};
-        letter-spacing: ${({ theme }) => theme.letterSpacing.medium};
-      }
       ul li span {
         display: inline;
       }

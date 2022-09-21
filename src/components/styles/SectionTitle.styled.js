@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { breakpoints } from './breakpoints';
 
 export const StyledSectionTitle = styled.h1`
   letter-spacing: ${({ theme }) => theme.letterSpacing.large};
-  font-size: ${({ theme }) => theme.fontSizes.heading5};
+  font-size: 1rem;
+  ${breakpoints('font-size', 'rem', [{ 768: 1.25 }, { 1024: 1.75 }])};
   text-transform: uppercase;
   span {
     font-weight: bold;
@@ -11,7 +13,7 @@ export const StyledSectionTitle = styled.h1`
   }
 
   @media screen and (min-width: ${({ theme }) =>
-      theme.breakpoints.menium}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.medium}) and (max-width: ${({ theme }) =>
       theme.breakpoints.large}) {
     margin-left: clamp(1.5rem, 5vw, 2.5rem);
   }

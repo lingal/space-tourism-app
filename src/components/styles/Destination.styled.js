@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import { breakpoints } from './breakpoints';
+
 
 export const DestinationContainer = styled.section`
   text-transform: uppercase;
   text-align: center;
   display: grid;
   justify-items: center;
-  gap: 1.75rem;
+  /* gap: 1.75rem; */
+  row-gap: 1.75rem;
   grid-template-areas:
     'title'
     'image'
@@ -32,7 +35,7 @@ export const DestinationContainer = styled.section`
       padding-bottom: 0.5rem;
       cursor: pointer;
       &.selected {
-        color: #fff;
+        color: ${({ theme }) => theme.colors.white};
         border-bottom: 3.5px solid;
       }
     }
@@ -43,6 +46,7 @@ export const DestinationContainer = styled.section`
     h2 {
       font-family: 'Bellefair', serif;
       font-size: 3.5rem;
+      ${breakpoints('font-size', 'rem', [{ 768: 4.5 }])};
     }
     & > p {
       font-size: 1.1rem;
@@ -72,13 +76,10 @@ export const DestinationContainer = styled.section`
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     h1 {
-      justify-self: left;
+      justify-self: start;
     }
 
     article {
-      h2 {
-        font-size: 4.5rem;
-      }
       & > div {
         flex-direction: row;
         justify-content: space-evenly;
@@ -87,25 +88,33 @@ export const DestinationContainer = styled.section`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    /* column-gap: 6rem; */
     text-align: left;
     align-items: center;
+    justify-items: start;
     grid-template-areas:
-      'title title'
-      'image tabs'
-      'image desc';
+      '. title title .'
+      '. image tabs .'
+      '. image desc .';
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
+        1fr
+      );
 
     img {
-      max-width: 70%;
+      max-width: 80%;
     }
 
     .tabs-container {
-      width: 80%;
+      justify-self: start;
+      /* width: 80%; */
     }
 
     article {
-      width: 80%;
+      margin-bottom: 0;
+      /* width: 80%; */
+      justify-self: start;
       & > p {
         max-width: 21rem;
       }
