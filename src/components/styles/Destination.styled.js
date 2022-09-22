@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { breakpoints } from './breakpoints';
 
-
 export const DestinationContainer = styled.section`
   text-transform: uppercase;
   text-align: center;
   display: grid;
   justify-items: center;
-  /* gap: 1.75rem; */
   row-gap: 1.75rem;
   grid-template-areas:
     'title'
@@ -24,7 +22,7 @@ export const DestinationContainer = styled.section`
   }
   .tabs-container {
     grid-area: tabs;
-    display: inline-flex;
+    display: flex;
     gap: clamp(1rem, 1vw + 1rem, 2rem);
     button {
       background: transparent;
@@ -46,17 +44,21 @@ export const DestinationContainer = styled.section`
     h2 {
       font-family: 'Bellefair', serif;
       font-size: 3.5rem;
-      ${breakpoints('font-size', 'rem', [{ 768: 4.5 }])};
+      ${breakpoints('font-size', 'rem', [{ 768: 4.5 }, { 1024: 5.5 }])};
     }
     & > p {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      ${breakpoints('font-size', 'rem', [{ 768: 1.1 }])};
       color: ${({ theme }) => theme.colors.neutral};
       text-transform: none;
-      max-width: 31rem;
-      margin-bottom: 3rem;
+      padding-inline: 3.25rem;
+      max-width: 37rem;
+      margin-bottom: 2rem;
     }
 
     & > div {
+      max-width: 90%;
+      margin-inline: auto;
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -88,10 +90,8 @@ export const DestinationContainer = styled.section`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    /* column-gap: 6rem; */
     text-align: left;
-    align-items: center;
-    justify-items: start;
+    row-gap: 0;
     grid-template-areas:
       '. title title .'
       '. image tabs .'
@@ -103,22 +103,27 @@ export const DestinationContainer = styled.section`
       );
 
     img {
-      max-width: 80%;
+      justify-self: center;
+      align-self: flex-end;
+      max-width: 75%;
     }
 
     .tabs-container {
-      justify-self: start;
-      /* width: 80%; */
+      width: 21rem;
+      justify-self: center;
     }
 
     article {
+      justify-self: center;
       margin-bottom: 0;
-      /* width: 80%; */
-      justify-self: start;
+
       & > p {
+        padding-inline: 0;
         max-width: 21rem;
       }
       & > div {
+        max-width: none;
+        margin-inline: 0;
         flex-direction: row;
         justify-content: start;
       }

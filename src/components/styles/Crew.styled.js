@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { breakpoints } from './breakpoints';
 
-
 export const CrewContainer = styled.section`
   align-self: flex-end;
   display: grid;
@@ -68,8 +67,8 @@ export const CrewContainer = styled.section`
       margin-bottom: 1rem;
     }
     & > p:last-of-type {
-      font-size: 1.1rem;
-      ${breakpoints('font-size', 'rem', [{ 768: 1.25 }])};
+      font-size: 1rem;
+      ${breakpoints('font-size', 'rem', [{ 768: 1.1 }])};
       color: ${({ theme }) => theme.colors.neutral};
       max-width: 38ch;
       ${breakpoints('max-width', 'ch', [{ 768: 52 }])};
@@ -97,7 +96,7 @@ export const CrewContainer = styled.section`
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     grid-template-areas:
-      '. title image .'
+      '. title title .'
       '. desc image .'
       '. indicators image .';
 
@@ -107,22 +106,25 @@ export const CrewContainer = styled.section`
       );
     gap: 0;
 
+
     & > div:first-of-type {
       border: none;
 
       img {
+        grid-row: 1 / -5;
         align-self: flex-end;
-        width: 85%;
+        height: 28rem;
+        width: auto;
       }
     }
 
     article {
-      align-self: flex-start;
+      align-self: flex-end;
       text-align: left;
       justify-self: left;
     }
     .dot-indicators {
-      align-self: flex-start;
+      align-self: center;
       justify-self: left;
     }
   }

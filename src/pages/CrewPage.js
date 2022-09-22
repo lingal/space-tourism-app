@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { sections } from '../utils/constants';
 import {
-  StyledMain,
   CrewContainer,
   StyledSectionTitle
 } from '../components/styles';
@@ -15,7 +14,7 @@ const CrewPage = () => {
   const [firstName, lastName] = name.split(' ');
 
   return (
-    <StyledMain>
+    <main>
       <CrewContainer>
         <StyledSectionTitle>
           <span>02</span> meet your crew
@@ -46,7 +45,7 @@ const CrewPage = () => {
           <p>{bio}</p>
         </article>
       </CrewContainer>
-    </StyledMain>
+    </main>
   );
 };
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import {
   DestinationContainer,
-  StyledMain,
   StyledSectionTitle
 } from '../components/styles/';
 import { sections } from '../utils/constants';
@@ -14,7 +13,7 @@ const DestinationPage = () => {
   const { name, description, distance, travel } = destinations[index];
 
   return (
-    <StyledMain>
+    <main>
       <DestinationContainer>
         <StyledSectionTitle>
           <span>01</span> pick your destination
@@ -54,7 +53,7 @@ const DestinationPage = () => {
           </div>
         </article>
       </DestinationContainer>
-    </StyledMain>
+    </main>
   );
 };
 

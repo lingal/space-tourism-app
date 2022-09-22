@@ -38,6 +38,7 @@ export const HomeContainer = styled.section`
     font-size: 1.25rem;
     ${breakpoints('font-size', 'rem', [{ 768: 2 }])};
     letter-spacing: 1.25px;
+    ${breakpoints('letter-spacing', 'px', [{ 768: 2 }])};
     text-transform: uppercase;
     font-family: 'Bellefair', serif;
     height: clamp(10rem, 32vw + 1rem, 15rem);
@@ -71,21 +72,25 @@ export const HomeContainer = styled.section`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     padding-top: 3.5rem;
     gap: 8rem;
-    a {
-      letter-spacing: 2px;
-    }
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: '. title button .';
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(
+        1rem,
+        1fr
+      );
     div {
+      grid-area: title;
+      justify-self: start;
       text-align: left;
       p {
         margin: 0;
         line-height: 1.75;
       }
     }
-    button {
-      align-self: flex-end;
+    a {
+      grid-area: button;
+      justify-self: end;
     }
   }
 `;

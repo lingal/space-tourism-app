@@ -1,11 +1,10 @@
 import React from 'react';
 import { HomeContainer } from '../components/styles/Home.styled';
-import { StyledMain } from '../components/styles/Main.styled';
 import { Link } from 'react-router-dom';
 const HomePage = () => {
   return (
-    <>
-      <StyledMain>
+    
+      <main>
         <HomeContainer>
           <div>
             <h1>
@@ -24,8 +23,8 @@ const HomePage = () => {
             <span>Explore</span>
           </Link>
         </HomeContainer>
-      </StyledMain>
-    </>
+      </main>
+    
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   TechnologyContainer,
-  StyledMain,
   StyledSectionTitle
 } from '../components/styles';
 import { sections } from '../utils/constants';
@@ -15,7 +14,7 @@ const TechnologyPage = ({ data }) => {
   const [word1, word2] = name.split(' ');
 
   return (
-    <StyledMain>
+    <main>
       <TechnologyContainer>
         <StyledSectionTitle>
           <span>03</span> space launch 101
@@ -49,7 +48,7 @@ const TechnologyPage = ({ data }) => {
           <p>{description}</p>
         </article>
       </TechnologyContainer>
-    </StyledMain>
+    </main>
   );
 };
 
