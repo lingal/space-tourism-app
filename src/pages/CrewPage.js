@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { sections } from '../utils/constants';
-import {
-  CrewContainer,
-  StyledSectionTitle
-} from '../components/styles';
+import { CrewContainer, StyledSectionTitle } from '../components/styles';
 
 const CrewPage = () => {
   const [{ crew }] = sections;

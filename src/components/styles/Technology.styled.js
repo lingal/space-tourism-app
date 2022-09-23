@@ -51,6 +51,7 @@ export const TechnologyContainer = styled.section`
 
   article {
     grid-area: desc;
+    justify-self: center;
     text-align: center;
 
     & > *:not(p:last-child) {
@@ -73,8 +74,8 @@ export const TechnologyContainer = styled.section`
       font-size: 1rem;
       ${breakpoints('font-size', 'rem', [{ 768: 1.1 }])};
       color: ${({ theme }) => theme.colors.neutral};
-      max-width: 48ch;
-      margin-inline: auto;
+      padding-inline: 3rem;
+      max-width: 30rem;
     }
   }
 
@@ -112,8 +113,8 @@ export const TechnologyContainer = styled.section`
       text-align: left;
 
       & > p:last-of-type {
-        max-width: 44ch;
-        margin-inline: 0;
+        max-width: 22rem;
+        padding-inline: 0;
       }
     }
   }

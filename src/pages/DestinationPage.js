@@ -27,7 +27,8 @@ const DestinationPage = () => {
         <div className="tabs-container">
           {destinations.map((tab, idx) => {
             return (
-              <button key={idx}
+              <button
+                key={idx}
                 onClick={() => setIndex(idx)}
                 className={index === idx ? 'selected' : ''}
               >

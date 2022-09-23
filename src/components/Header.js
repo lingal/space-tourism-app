@@ -14,6 +14,7 @@ const Header = () => {
         <div className="logo">
           <img src={Logo} alt="space logo" />
         </div>
+        <span>&nbsp;</span>
         <button
           onClick={() => setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen)}
         >

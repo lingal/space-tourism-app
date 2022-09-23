@@ -70,8 +70,8 @@ export const CrewContainer = styled.section`
       font-size: 1rem;
       ${breakpoints('font-size', 'rem', [{ 768: 1.1 }])};
       color: ${({ theme }) => theme.colors.neutral};
-      max-width: 38ch;
-      ${breakpoints('max-width', 'ch', [{ 768: 52 }])};
+      padding-inline: 3.25rem;
+      max-width: 32rem;
     }
   }
 
@@ -106,7 +106,6 @@ export const CrewContainer = styled.section`
       );
     gap: 0;
 
-
     & > div:first-of-type {
       border: none;
 
@@ -122,6 +121,11 @@ export const CrewContainer = styled.section`
       align-self: flex-end;
       text-align: left;
       justify-self: left;
+
+       & > p:last-of-type {
+        padding-inline: 0;
+        max-width: 22rem;
+       }
     }
     .dot-indicators {
       align-self: center;

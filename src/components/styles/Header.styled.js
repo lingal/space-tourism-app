@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { breakpoints } from './breakpoints';
 
 export const StyledHeader = styled.header`
+  position: relative;
   width: 100%;
   height: 5rem;
   display: flex;
@@ -9,7 +10,20 @@ export const StyledHeader = styled.header`
   align-items: center;
 
   .logo {
+    flex-shrink: 0;
+    align-self: center;
     margin-left: clamp(1.5rem, 5vw, 2.5rem);
+  }
+  & > span {
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.faded25};
+    position: relative;
+    transform: translateX(10%);
+    z-index: 1000;
+    margin-left: 2rem;
+    flex: 100%;
+    display: none;
+    ${breakpoints('display', '', [{ 1024: 'inline-block' }])};
   }
 
   button {
@@ -22,6 +36,7 @@ export const StyledHeader = styled.header`
   }
 
   nav {
+    flex-shrink: 0;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.faded10};
     backdrop-filter: blur(30px);
@@ -63,7 +78,6 @@ export const StyledHeader = styled.header`
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    /* margin-top: 2rem; */
     nav {
       padding-left: clamp(2rem, 10vw, 10rem);
       padding-right: 15vw;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage, CrewPage, DestinationPage, TechnologyPage } from './pages';
 import { ThemeProvider } from 'styled-components';
@@ -7,7 +7,6 @@ import { Sidebar } from './components';
 import { theme } from './components/styles/theme';
 import GlobalStyles from './components/styles/Global';
 import { SidebarContext } from './utils/Context';
-
 
 import {
   homeDesktop,
@@ -43,20 +42,16 @@ const backgroundImages = {
   }
 };
 
-
-
 function App() {
   const [size, setSize] = useState(window.innerWidth);
   const [screen, setScreen] = useState('mobile');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
 
   const location = useLocation().pathname.slice(1);
 
   const getWindowSize = () => {
     setSize(window.innerWidth);
   };
-
 
   useEffect(() => {
     const handleScreenType = () => {
@@ -85,7 +80,7 @@ function App() {
         <GlobalStyles
           bg={backgroundImages[screen][location ? location : 'home']}
         />
-        <Sidebar isSidebarOpen={false} />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
