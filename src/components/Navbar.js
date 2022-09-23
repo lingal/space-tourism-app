@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { links } from '../utils/constants';
 import { StyledNavbar } from './styles/Navbar.styled';
+import { SidebarContext } from '../utils/Context';
 
 const Navbar = () => {
+  const { setIsSidebarOpen } = useContext(SidebarContext);
+
   return (
     <StyledNavbar>
       <ul>
@@ -12,7 +15,7 @@ const Navbar = () => {
           return (
             <li key={id}>
               <NavLink
-                state={{ isSidebarOpen: true }}
+                onClick={() => setIsSidebarOpen(false)}
                 to={url}
                 className={({ isActive }) => (isActive ? 'selected' : '')}
               >

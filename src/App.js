@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState} from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage, CrewPage, DestinationPage, TechnologyPage } from './pages';
 import { ThemeProvider } from 'styled-components';
@@ -6,6 +6,8 @@ import { SharedLayout } from './pages/';
 import { Sidebar } from './components';
 import { theme } from './components/styles/theme';
 import GlobalStyles from './components/styles/Global';
+import { SidebarContext } from './utils/Context';
+
 
 import {
   homeDesktop,
@@ -41,28 +43,20 @@ const backgroundImages = {
   }
 };
 
-const reducer = (state, action) => {};
-const defaultState = {
-  isSidebarOpen: false
-};
+
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, defaultState);
-
   const [size, setSize] = useState(window.innerWidth);
   const [screen, setScreen] = useState('mobile');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 
   const location = useLocation().pathname.slice(1);
-
-  const [test, setTest] = useState(false);
-
-  const getValue = () => {
-    setTest((e) => !e);
-  };
 
   const getWindowSize = () => {
     setSize(window.innerWidth);
   };
+
 
   useEffect(() => {
     const handleScreenType = () => {
@@ -86,13 +80,12 @@ function App() {
   }, [size]);
 
   return (
-    <>
+    <SidebarContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
       <ThemeProvider theme={theme}>
         <GlobalStyles
           bg={backgroundImages[screen][location ? location : 'home']}
         />
-        {/* <Header isNavOpen={getValue} isOpen={test} /> */}
-        <Sidebar isSidebarOpen={test} />
+        <Sidebar isSidebarOpen={false} />
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<HomePage />} />
@@ -107,7 +100,7 @@ function App() {
           </Route>
         </Routes>
       </ThemeProvider>
-    </>
+    </SidebarContext.Provider>
   );
 }
 
